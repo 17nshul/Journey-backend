@@ -15,3 +15,14 @@ async def signup(email: str, password: str, name: str):
     """
 
     return {"email": email, "password": password, "name": name}
+
+
+@router.post("/journal")
+async def journal(data:dict[str, str, str])->dict:
+    """
+    create a new journal entry in db
+    """
+
+    return {"data": data}
+
+
