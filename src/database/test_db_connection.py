@@ -9,6 +9,8 @@ config = {
     'raise_on_warnings': True
 }
 
+connection = None
+cursor = None
 
 try:
     connection = mysql.connector.connect(**config)
@@ -26,7 +28,9 @@ except mysql.connector.Error as e:
     print(f"Error while connecting to db: {e}")
 
 finally:
-    if 'connection' in locals() and connection.is_connected():
+    if cursor is not None:
         cursor.close()
+
+    if connection is not None and connection.is_connected():
         connection.close()
         print("MySQL connection is closed")
