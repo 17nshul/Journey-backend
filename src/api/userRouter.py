@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from ..database import databaseConnectionHandler
 router = APIRouter()
 
 @router.post("/login")
@@ -12,7 +13,11 @@ async def login(email: str, password: str):
 async def signup(email: str, password: str, name: str):
     """
     create a new user in db
+
+    takes three strings of email, password and name
     """
+    
+
 
     return {"email": email, "password": password, "name": name}
 
