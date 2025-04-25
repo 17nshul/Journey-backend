@@ -10,7 +10,7 @@ import os
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#TODO: will make these classes laterr, using direct variables for now for DB connection
+#TODO: will make these classes later, using direct variables for now for DB connection
 # class DatabaseConnectionHandler(BaseSettings):
 #     """
 #         Config class that defines database settings
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 db_name: str = os.getenv("DB_NAME")
 db_user: str = os.getenv("DB_USER")
 db_host: str = os.getenv("DB_HOST")
-db_port: int|str = os.getenv("DB_PORT")
+db_port: int | str = os.getenv("DB_PORT")
 db_password: str = os.getenv("DB_PASSWORD")
 
 SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}"
